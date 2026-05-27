@@ -19,9 +19,65 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  title: 'Gradvise — Restaurant Revenue OS',
+  title: {
+    default: 'Gradvise | Restaurant Management Software & Revenue Platform',
+    template: '%s | Gradvise',
+  },
   description:
-    'Turn your restaurant into a revenue machine. Smart menus, automated CRM, and targeted upsells for modern dining.',
+    'Gradvise is the all-in-one restaurant management platform. Smart menus, automated email & SMS marketing, guest CRM, real-time analytics, and Kitchen Display System — built for modern restaurants.',
+  keywords: [
+    'restaurant management software',
+    'restaurant POS system',
+    'restaurant marketing automation',
+    'kitchen display system',
+    'restaurant CRM',
+    'restaurant analytics',
+    'restaurant revenue software',
+    'restaurant guest profiles',
+    'restaurant loyalty program',
+  ],
+  authors: [{ name: 'Gradvise' }],
+  creator: 'Gradvise Inc.',
+  metadataBase: new URL('https://gradvise.com'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://gradvise.com',
+    siteName: 'Gradvise',
+    title: 'Gradvise | Restaurant Management Software & Revenue Platform',
+    description:
+      'The all-in-one restaurant management platform. Smart menus, automated marketing, guest CRM, and real-time analytics — start your free 30-day trial today.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Gradvise — Restaurant Management Platform',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Gradvise | Restaurant Management Software',
+    description:
+      'Smart menus, automated marketing, guest CRM, and real-time analytics for modern restaurants.',
+    creator: '@gradvise',
+    images: ['/og-image.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: '/vercel.svg',
   },

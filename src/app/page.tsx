@@ -879,7 +879,7 @@ export default function Home() {
            </motion.div>
 
            <motion.div {...fadeUp}>
-             <h2 className="text-6xl md:text-7xl lg:text-8xl font-black text-black mb-8 tracking-tighter leading-[1.05]">
+             <h2 className="text-4xl md:text-5xl lg:text-8xl font-black text-black mb-8 tracking-tighter leading-[1.05]">
                Ready to unlock your <br className="hidden md:block" />
                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">revenue engine?</span>
              </h2>
