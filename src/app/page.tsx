@@ -522,75 +522,166 @@ export default function Home() {
                  </div>
               </div>
             </motion.div>
-
           </div>
         </div>
       </section>
 
-      {/* ── HOW IT WORKS (PREMIUM CIRCULAR) ── */}
-      <section className="w-full py-32 bg-gray-50 relative overflow-hidden" id="services">
-        <div className="container mx-auto px-4 max-w-6xl text-center">
-          <motion.h2 {...fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-black tracking-tight">
-             <span className="text-gray-400 font-light">How Our</span> Revenue Operating<br/>
-             <span className="text-black">System</span> <span className="text-gray-400 font-light">Works</span>
-          </motion.h2>
-          <motion.p {...fadeUp} className="text-gray-500 max-w-2xl mx-auto mb-24 text-base font-medium">
-            Your guests get a frictionless ordering experience, while you capture every detail to fuel your automated marketing campaigns.
-          </motion.p>
+      {/* ── AUTOMATED PIPELINE (How It Works) ── */}
+      <section className="w-full py-32 bg-white relative border-t border-gray-100 overflow-hidden" id="flow">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-24 relative z-20">
+             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 border border-red-100 text-primary mb-6 shadow-sm">
+               <Activity className="w-4 h-4" />
+               <span className="text-[11px] font-bold tracking-widest uppercase">The Operating System Flow</span>
+             </div>
+             <h2 className="text-4xl md:text-6xl font-black text-black mb-6 tracking-tight">The Automated <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-orange-500">Pipeline</span></h2>
+             <p className="text-gray-500 text-lg max-w-2xl mx-auto font-medium">From the moment a guest sits down, to the targeted SMS that brings them back. Watch how the entire ecosystem seamlessly connects.</p>
+          </div>
 
-          <div className="relative max-w-5xl mx-auto h-[650px] flex items-center justify-center mt-12">
-            {/* SVG Connecting Ring */}
-            <svg className="absolute inset-0 m-auto w-[700px] h-[700px] pointer-events-none -z-10" viewBox="0 0 700 700">
-              <circle cx="350" cy="350" r="348" fill="none" stroke="var(--border)" strokeWidth="2" strokeDasharray="12 12" className="animate-[spin_60s_linear_infinite]" />
-            </svg>
+          <div className="relative max-w-5xl mx-auto">
+             {/* The glowing central line */}
+             <div className="absolute top-0 bottom-0 left-[28px] md:left-1/2 w-[2px] bg-gray-100 md:-translate-x-1/2">
+                <div className="w-full h-1/3 bg-gradient-to-b from-primary to-transparent rounded-full" />
+             </div>
 
-            {/* Center POS Mockup */}
-            <motion.div 
-              {...fadeUp}
-              className="z-20 w-[260px] h-[550px] bg-white rounded-[40px] border-[8px] border-slate-900 shadow-2xl overflow-hidden relative"
-            >
-              <div className="absolute top-0 inset-x-0 h-6 flex justify-center z-50"><div className="w-24 h-4 bg-slate-900 rounded-b-xl"/></div>
-              <div className="bg-primary text-white p-6 pt-12">
-                 <div className="text-3xl font-black mb-1">+20%</div>
-                 <div className="text-xs font-bold opacity-80 uppercase tracking-widest">Revenue Growth</div>
-              </div>
-              <div className="h-full bg-white p-5 flex flex-col">
-                 <div className="w-full h-12 bg-gray-50 border border-gray-100 rounded-xl mb-3 flex items-center justify-between px-4">
-                   <div className="text-xs font-bold">Smart Upsells</div><Check className="w-4 h-4 text-emerald-500" />
-                 </div>
-                 <div className="w-full h-12 bg-gray-50 border border-gray-100 rounded-xl mb-3 flex items-center justify-between px-4">
-                   <div className="text-xs font-bold">CRM Captured</div><Check className="w-4 h-4 text-emerald-500" />
-                 </div>
-                 <div className="w-full h-12 bg-gray-50 border border-gray-100 rounded-xl mb-3 flex items-center justify-between px-4">
-                   <div className="text-xs font-bold">Campaign Ready</div><Check className="w-4 h-4 text-emerald-500" />
-                 </div>
-              </div>
-            </motion.div>
+             {/* Step 1: Ordering */}
+             <div className="relative flex flex-col md:flex-row items-center justify-between mb-24 lg:mb-32">
+                <div className="absolute left-[20px] md:left-1/2 w-5 h-5 bg-white rounded-full md:-translate-x-1/2 shadow-[0_0_0_4px_rgba(255,50,50,0.2)] border-4 border-primary z-10" />
+                
+                <div className="w-full md:w-[45%] pl-16 md:pl-0 text-left md:text-right pr-0 md:pr-16 order-2 md:order-1 mt-8 md:mt-0">
+                   <div className="text-primary font-black text-xl mb-2">Step 01</div>
+                   <h3 className="text-3xl font-bold text-black mb-4">Guest Orders & Upsells</h3>
+                   <p className="text-gray-500 text-base leading-relaxed mb-6">The guest scans the table QR code. Before they submit their cart, our AI instantly suggests high-margin combos, driving up average check sizes effortlessly.</p>
+                </div>
+                
+                <div className="w-full md:w-[45%] pl-16 md:pl-0 pr-4 md:pr-0 order-1 md:order-2">
+                   {/* Premium Mockup for Step 1 */}
+                   <div className="bg-white rounded-[32px] p-6 border border-gray-200 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] relative group">
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center"><Smartphone className="w-6 h-6 text-black"/></div>
+                        <div>
+                          <div className="font-bold text-black text-lg">Table 12 Menu</div>
+                          <div className="text-xs text-primary font-bold">Scanning...</div>
+                        </div>
+                      </div>
+                      <div className="space-y-3">
+                         <div className="w-full bg-gray-50 rounded-xl p-3 border border-gray-100 flex justify-between items-center">
+                            <span className="font-bold text-sm text-black">Wagyu Burger</span>
+                            <span className="text-sm font-black text-black">$18</span>
+                         </div>
+                         <div className="w-full bg-primary/5 rounded-xl p-3 border border-primary/20 flex justify-between items-center relative overflow-hidden group-hover:border-primary transition-colors cursor-pointer">
+                            <div className="absolute inset-0 bg-primary/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500" />
+                            <span className="font-bold text-sm text-primary relative z-10">+ Make it a Combo</span>
+                            <span className="text-sm font-black text-primary relative z-10">+$6</span>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
 
-            {/* 4 Premium Cards placed in a circle */}
-            <motion.div {...fadeUp} className="absolute top-0 left-0 xl:-left-12 bg-white border border-blue-100 p-6 rounded-3xl shadow-xl w-64 text-left group hover:-translate-y-2 transition-transform">
-               <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white mb-4 shadow-lg float-right group-hover:bg-blue-500 transition-colors"><Smartphone className="w-5 h-5"/></div>
-               <h4 className="font-bold text-base text-black clear-both mb-2">Guests Scan & Order</h4>
-               <p className="text-xs text-gray-500 leading-relaxed">Diners browse visual menus, accept smart upsells, and self-pay seamlessly.</p>
-            </motion.div>
+             {/* Step 2: KDS */}
+             <div className="relative flex flex-col md:flex-row items-center justify-between mb-24 lg:mb-32">
+                <div className="absolute left-[20px] md:left-1/2 w-5 h-5 bg-white rounded-full md:-translate-x-1/2 shadow-[0_0_0_4px_rgba(255,50,50,0.2)] border-4 border-primary z-10" />
+                
+                <div className="w-full md:w-[45%] pl-16 md:pl-0 pr-4 md:pr-0 order-1 md:order-1">
+                   {/* Premium Mockup for Step 2 */}
+                   <div className="bg-slate-900 rounded-[32px] p-6 shadow-2xl relative group overflow-hidden">
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/20 blur-3xl rounded-full" />
+                      <div className="flex items-center gap-3 mb-6 border-b border-slate-800 pb-4 relative z-10">
+                        <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center"><ChefHat className="w-6 h-6 text-white"/></div>
+                        <div>
+                          <div className="font-bold text-white text-lg">Kitchen Display</div>
+                          <div className="text-xs text-orange-400 font-bold">Live Orders</div>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-3 relative z-10">
+                         <div className="bg-slate-800 rounded-xl p-3 border border-slate-700">
+                            <div className="text-xs font-bold text-white mb-2 flex justify-between"><span>T12</span> <span className="text-orange-400">00:45</span></div>
+                            <div className="w-full h-2 bg-slate-700 rounded-full mb-1" />
+                            <div className="w-2/3 h-2 bg-slate-700 rounded-full" />
+                         </div>
+                         <div className="bg-primary rounded-xl p-3 shadow-lg shadow-primary/20 scale-105">
+                            <div className="text-xs font-bold text-white mb-2 flex justify-between"><span>NEW</span> <span className="text-white">00:00</span></div>
+                            <div className="w-full h-2 bg-white/20 rounded-full mb-1" />
+                            <div className="w-full h-2 bg-white/20 rounded-full mb-1" />
+                            <div className="w-1/2 h-2 bg-white/20 rounded-full" />
+                         </div>
+                      </div>
+                   </div>
+                </div>
 
-            <motion.div {...fadeUp} className="absolute top-0 right-0 xl:-right-12 bg-white border border-orange-100 p-6 rounded-3xl shadow-xl w-64 text-left group hover:-translate-y-2 transition-transform">
-               <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white mb-4 shadow-lg float-right group-hover:bg-orange-500 transition-colors"><ChefHat className="w-5 h-5"/></div>
-               <h4 className="font-bold text-base text-black clear-both mb-2">Kitchen Receives</h4>
-               <p className="text-xs text-gray-500 leading-relaxed">Orders route instantly to the KDS, eliminating handwritten tickets and errors.</p>
-            </motion.div>
+                <div className="w-full md:w-[45%] pl-16 md:pl-16 text-left order-2 md:order-2 mt-8 md:mt-0">
+                   <div className="text-primary font-black text-xl mb-2">Step 02</div>
+                   <h3 className="text-3xl font-bold text-black mb-4">Instant KDS Routing</h3>
+                   <p className="text-gray-500 text-base leading-relaxed mb-6">The order flies directly to the Kitchen Display System without staff intervention. Wait times drop, and food costs are instantly deducted from your live inventory.</p>
+                </div>
+             </div>
 
-            <motion.div {...fadeUp} className="absolute bottom-0 left-0 xl:-left-12 bg-white border border-gray-200 p-6 rounded-3xl shadow-xl w-64 text-left group hover:-translate-y-2 transition-transform">
-               <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white mb-4 shadow-lg float-right group-hover:bg-primary transition-colors"><Zap className="w-5 h-5"/></div>
-               <h4 className="font-bold text-base text-black clear-both mb-2">AI Campaigns Trigger</h4>
-               <p className="text-xs text-gray-500 leading-relaxed">Automated marketing runs in the background to fill slow hours and bring diners back.</p>
-            </motion.div>
+             {/* Step 3: CRM */}
+             <div className="relative flex flex-col md:flex-row items-center justify-between mb-24 lg:mb-32">
+                <div className="absolute left-[20px] md:left-1/2 w-5 h-5 bg-white rounded-full md:-translate-x-1/2 shadow-[0_0_0_4px_rgba(255,50,50,0.2)] border-4 border-primary z-10" />
+                
+                <div className="w-full md:w-[45%] pl-16 md:pl-0 text-left md:text-right pr-0 md:pr-16 order-2 md:order-1 mt-8 md:mt-0">
+                   <div className="text-primary font-black text-xl mb-2">Step 03</div>
+                   <h3 className="text-3xl font-bold text-black mb-4">Profile Captured</h3>
+                   <p className="text-gray-500 text-base leading-relaxed mb-6">As the payment processes, the system captures their details and links it to their past orders, assigning them a "Premium" or "At-Risk" tag in your database.</p>
+                </div>
+                
+                <div className="w-full md:w-[45%] pl-16 md:pl-0 pr-4 md:pr-0 order-1 md:order-2">
+                   {/* Premium Mockup for Step 3 */}
+                   <div className="bg-white rounded-[32px] p-6 border border-gray-200 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] relative group">
+                      <div className="flex items-center justify-between mb-6 border-b border-gray-100 pb-4">
+                         <div className="flex items-center gap-3">
+                           <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">SJ</div>
+                           <div>
+                             <div className="font-bold text-black text-lg">Sarah Jenkins</div>
+                             <div className="text-xs text-gray-400 font-medium">Added to Database</div>
+                           </div>
+                         </div>
+                         <Check className="w-6 h-6 text-emerald-500" />
+                      </div>
+                      <div className="flex justify-between items-center bg-gray-50 rounded-xl p-3 border border-gray-100">
+                         <span className="text-sm font-bold text-gray-500">Status</span>
+                         <span className="text-xs font-black text-white bg-black px-3 py-1 rounded-full shadow-md">Regular</span>
+                      </div>
+                   </div>
+                </div>
+             </div>
 
-            <motion.div {...fadeUp} className="absolute bottom-0 right-0 xl:-right-12 bg-white border border-purple-100 p-6 rounded-3xl shadow-xl w-64 text-left group hover:-translate-y-2 transition-transform">
-               <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white mb-4 shadow-lg float-right group-hover:bg-purple-500 transition-colors"><BarChart3 className="w-5 h-5"/></div>
-               <h4 className="font-bold text-base text-black clear-both mb-2">True Margin Control</h4>
-               <p className="text-xs text-gray-500 leading-relaxed">Live recipe costing tracks exactly which dishes are driving your profit.</p>
-            </motion.div>
+             {/* Step 4: Marketing */}
+             <div className="relative flex flex-col md:flex-row items-center justify-between">
+                <div className="absolute left-[20px] md:left-1/2 w-5 h-5 bg-primary rounded-full md:-translate-x-1/2 shadow-[0_0_0_8px_rgba(255,50,50,0.2)] border-4 border-white z-10" />
+                
+                <div className="w-full md:w-[45%] pl-16 md:pl-0 pr-4 md:pr-0 order-1 md:order-1">
+                   {/* Premium Mockup for Step 4 */}
+                   <div className="bg-white rounded-[32px] p-6 border border-gray-200 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] relative group">
+                      <div className="flex items-center gap-3 mb-6 border-b border-gray-100 pb-4">
+                        <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center"><MessageCircle className="w-5 h-5 text-white"/></div>
+                        <div>
+                          <div className="font-bold text-black text-lg">Automated SMS</div>
+                          <div className="text-xs text-gray-400 font-medium">Sent on Tuesday 3:00 PM</div>
+                        </div>
+                      </div>
+                      <div className="bg-gray-100 rounded-2xl rounded-tl-sm p-4 relative w-[85%]">
+                         <div className="text-sm text-gray-800 leading-snug font-medium">
+                            "Hey Sarah! We missed you. Come back to The Truffle Bar today and get a free dessert on us!"
+                         </div>
+                      </div>
+                      <div className="w-full flex justify-end mt-4">
+                         <div className="bg-primary text-white rounded-2xl rounded-tr-sm p-3 shadow-md max-w-[70%]">
+                            <div className="text-sm font-medium">On my way! 🏃‍♀️</div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+
+                <div className="w-full md:w-[45%] pl-16 md:pl-16 text-left order-2 md:order-2 mt-8 md:mt-0">
+                   <div className="text-primary font-black text-xl mb-2">Step 04</div>
+                   <h3 className="text-3xl font-bold text-black mb-4">Automated Marketing Loop</h3>
+                   <p className="text-gray-500 text-base leading-relaxed mb-6">Two weeks later, the system detects she hasn't returned. An automated, highly-targeted SMS goes out on a slow Tuesday, bringing her right back into the pipeline.</p>
+                </div>
+             </div>
+
           </div>
         </div>
       </section>
