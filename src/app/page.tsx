@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Play, Settings, Users, Truck, Sparkles, TrendingUp, ChevronRight, Activity, ShieldCheck, Zap, Clock, Star, ChefHat, BarChart3, MessageCircle, Check, Smartphone, Brain, PieChart } from 'lucide-react';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 // Animation Configurations
 const fadeUp = {
@@ -28,9 +28,57 @@ const staggerItem = {
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
+  const carouselRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const slider = carouselRef.current;
+    if (!slider) return;
+
+    let isDown = false;
+    let startX: number;
+    let scrollLeft: number;
+
+    const mouseDown = (e: MouseEvent) => {
+      isDown = true;
+      slider.style.cursor = 'grabbing';
+      slider.style.scrollBehavior = 'auto';
+      slider.classList.remove('snap-x', 'snap-mandatory', 'scroll-smooth');
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    };
+
+    const stopDrag = () => {
+      isDown = false;
+      slider.style.cursor = 'grab';
+      slider.style.scrollBehavior = 'smooth';
+      slider.classList.add('snap-x', 'snap-mandatory', 'scroll-smooth');
+    };
+
+    const mouseMove = (e: MouseEvent) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2; 
+      slider.scrollLeft = scrollLeft - walk;
+    };
+
+    slider.addEventListener('mousedown', mouseDown);
+    slider.addEventListener('mouseleave', stopDrag);
+    slider.addEventListener('mouseup', stopDrag);
+    slider.addEventListener('mousemove', mouseMove);
+    
+    slider.style.cursor = 'grab';
+
+    return () => {
+      slider.removeEventListener('mousedown', mouseDown);
+      slider.removeEventListener('mouseleave', stopDrag);
+      slider.removeEventListener('mouseup', stopDrag);
+      slider.removeEventListener('mousemove', mouseMove);
+    };
   }, []);
 
   return (
@@ -686,103 +734,171 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── ELEVATED TESTIMONIALS ── */}
-      <section className="w-full py-32 bg-white" id="restaurant">
+      {/* ── THE EDITORIAL SHOWCASE (Ultra Premium) ── */}
+      <section className="w-full py-32 bg-white relative overflow-hidden" id="restaurant">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            
-            <div className="flex flex-col items-start pr-8">
-              <motion.h2 {...fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-8 leading-[1.1] tracking-tight">
-                What Our Happy<br />
-                <span className="text-black">Owners Are Saying</span>
-              </motion.h2>
-              <motion.p {...fadeUp} className="text-gray-500 text-lg mb-16 max-w-md font-medium leading-relaxed">
-                Restaurant owners consistently share how Gradvise has cut their operational chaos and grown their revenue on autopilot.
-              </motion.p>
-              
-              <motion.div {...fadeUp} className="bg-gray-50 rounded-[32px] p-10 shadow-sm relative w-full border border-gray-100 max-w-lg">
-                <div className="absolute -top-8 left-10 w-16 h-16 rounded-full border-4 border-white overflow-hidden shadow-xl z-10">
-                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150" className="w-full h-full object-cover" alt="Ayesha Khan" />
-                </div>
-                <div className="text-black font-serif text-5xl mb-4 mt-4 leading-none">"</div>
-                <p className="text-base md:text-lg text-gray-600 leading-relaxed font-medium mb-8">
-                  The automated CRM alone paid for the system in a week. I wake up to a database of my regular customers, and the platform sends them offers on slow days.
-                </p>
-                <div className="text-right text-sm font-black text-black uppercase tracking-wider">— Ayesha Khan</div>
-              </motion.div>
-            </div>
-
-            <motion.div {...fadeUp} className="relative h-[600px] w-full rounded-[48px] overflow-hidden shadow-2xl group">
-              <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Restaurant Interior" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
-              
-              <div className="absolute bottom-0 inset-x-0 p-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 z-10">
-                <div>
-                  <div className="flex gap-1.5 mb-4 bg-black/40 backdrop-blur-md w-fit px-3 py-1.5 rounded-full border border-white/10">
-                    {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
-                  </div>
-                  <div className="text-white text-3xl font-black leading-tight">
-                    The Truffle Bar<br/>
-                    <span className="font-light opacity-90">Downtown District</span>
-                  </div>
-                </div>
-                <button className="bg-white text-black text-sm font-black px-8 py-4 rounded-full hover:bg-gray-100 hover:scale-105 transition-all shadow-xl">
-                  Read Case Study
-                </button>
+           
+           <div className="flex flex-col md:flex-row items-center justify-between mb-16 relative z-10">
+              <div>
+                 <div className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-4 flex items-center gap-3">
+                    <div className="w-8 h-[1px] bg-primary" />
+                    Success Stories
+                 </div>
+                 <h2 className="text-4xl md:text-5xl font-medium text-black tracking-tight">Proof of <span className="font-serif italic text-gray-400">Performance</span>.</h2>
               </div>
-            </motion.div>
+              {/* Optional: Navigation hint */}
+              <div className="hidden md:flex items-center gap-2 text-gray-400">
+                 <ArrowRight className="w-4 h-4" />
+                 <span className="text-xs font-bold tracking-widest uppercase">Drag to explore</span>
+              </div>
+           </div>
 
-          </div>
+           {/* Immersive Case Study Carousel Container */}
+           <motion.div {...fadeUp} className="w-full relative group cursor-grab">
+              
+              {/* CSS Scroll Snap Container */}
+              <div 
+                ref={carouselRef}
+                id="testimonial-scroll"
+                className="w-full h-[600px] md:h-[700px] flex overflow-x-auto snap-x snap-mandatory scroll-smooth rounded-[32px] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.1)] relative"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                 {/* Internal Style to hide scrollbar in webkit browsers since Tailwind doesn't have it built-in cleanly without plugins */}
+                 <style dangerouslySetInnerHTML={{__html: `
+                    #testimonial-scroll::-webkit-scrollbar { display: none; }
+                 `}} />
+
+                 {[
+                   {
+                     quote: "Gradvise transformed our operations overnight. The automated KDS routing cut our wait times by 15 minutes, and the built-in marketing engine increased our returning guests by 34%. It's the most elegant software we've ever used.",
+                     author: "Arthur Sterling",
+                     role: "Operations Director, Sterling Hospitality",
+                     image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=2000",
+                     metric1: { value: "+34%", label: "Revenue Growth" },
+                     metric2: { value: "Zero", label: "Lost Tickets" }
+                   },
+                   {
+                     quote: "We completely abandoned our old loyalty app. The automated marketing built right into the payment flow captures everyone. It acts like a full-time marketer that never sleeps.",
+                     author: "Elena Rostova",
+                     role: "Founder, The Grove Fine Dining",
+                     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=2000",
+                     metric1: { value: "4x", label: "Guest Return Rate" },
+                     metric2: { value: "100%", label: "Profile Capture" }
+                   },
+                   {
+                     quote: "The AI upsell prompts are incredibly natural. It suggests drinks and sides based on exactly what they ordered. Our average ticket size went up effortlessly, and the guests love the experience.",
+                     author: "Marcus Chen",
+                     role: "General Manager, Lotus Restaurant Group",
+                     image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=2000",
+                     metric1: { value: "+$4.50", label: "Avg Ticket Size" },
+                     metric2: { value: "18%", label: "Margin Increase" }
+                   }
+                 ].map((testimonial, index) => (
+                    <div key={index} className="w-full flex-shrink-0 h-full relative snap-center group/card overflow-hidden">
+                      {/* Massive Immersive Background */}
+                      <img src={testimonial.image} className="w-full h-full object-cover group-hover/card:scale-[1.03] transition-transform duration-[3s] ease-out" alt={testimonial.author} />
+                      
+                      {/* Soft Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent pointer-events-none" />
+                      
+                      {/* Content Box */}
+                      <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-end justify-between gap-10">
+                         
+                         <div className="max-w-3xl">
+                            <div className="flex gap-1.5 mb-8">
+                               {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400 drop-shadow-md" />)}
+                            </div>
+                            {/* Exquisite Typography */}
+                            <p className="text-white text-xl md:text-2xl lg:text-3xl font-light leading-relaxed mb-12 text-shadow-sm">
+                               "{testimonial.quote}"
+                            </p>
+                            <div className="flex items-center gap-4">
+                               <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-md">
+                                  <span className="text-white font-serif italic text-lg">{testimonial.author.charAt(0)}</span>
+                               </div>
+                               <div>
+                                  <div className="text-white font-medium text-lg tracking-wide">{testimonial.author}</div>
+                                  <div className="text-white/60 text-xs font-bold uppercase tracking-widest mt-1">{testimonial.role}</div>
+                               </div>
+                            </div>
+                         </div>
+
+                         {/* Premium Glass Metrics Panel */}
+                         <div className="w-full lg:w-auto bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-8 flex flex-row lg:flex-col gap-8 shadow-2xl items-center lg:items-start justify-center">
+                            <div className="text-center lg:text-left">
+                               <div className="text-4xl lg:text-5xl text-white font-light tracking-tight mb-2">{testimonial.metric1.value}</div>
+                               <div className="text-primary text-[10px] font-bold uppercase tracking-widest">{testimonial.metric1.label}</div>
+                            </div>
+                            <div className="w-[1px] h-12 lg:w-16 lg:h-[1px] bg-white/20" />
+                            <div className="text-center lg:text-left">
+                               <div className="text-4xl lg:text-5xl text-white font-light tracking-tight mb-2">{testimonial.metric2.value}</div>
+                               <div className="text-primary text-[10px] font-bold uppercase tracking-widest">{testimonial.metric2.label}</div>
+                            </div>
+                         </div>
+
+                      </div>
+                    </div>
+                 ))}
+              </div>
+
+              {/* Progress Indicator & Mobile Hints */}
+              <div className="absolute bottom-8 right-8 flex gap-2 z-20 pointer-events-none">
+                 <div className="w-2 h-2 rounded-full bg-white shadow-md" />
+                 <div className="w-2 h-2 rounded-full bg-white/40 shadow-md" />
+                 <div className="w-2 h-2 rounded-full bg-white/40 shadow-md" />
+              </div>
+           </motion.div>
+
+           {/* Brand Logos below to add density */}
+           <div className="mt-16 border-t border-gray-100 pt-12 flex flex-wrap items-center justify-center md:justify-between gap-8 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-700">
+              <div className="font-serif text-2xl font-bold italic tracking-wide">The Truffle Bar</div>
+              <div className="font-sans text-2xl font-black tracking-tighter uppercase">Lotus Group</div>
+              <div className="font-sans text-2xl font-light tracking-widest uppercase">Bistro 44</div>
+              <div className="font-serif text-2xl font-medium uppercase tracking-tight">Steakhouse</div>
+              <div className="font-sans text-2xl font-bold tracking-widest uppercase">Gusto</div>
+           </div>
+
         </div>
       </section>
 
-      {/* ── HIGH IMPACT BOTTOM CTA ── */}
-      <section className="w-full pt-16 pb-32 px-4 md:px-8 bg-white">
-        <div className="container mx-auto max-w-7xl">
-          <motion.div 
-            {...fadeUp}
-            className="bg-black rounded-[56px] overflow-hidden flex flex-col lg:flex-row items-center justify-between p-12 lg:p-20 relative border border-gray-800 shadow-2xl"
-          >
-            {/* Center Content */}
-            <div className="flex flex-col items-center lg:items-start text-center lg:text-left z-20 flex-1 px-4 py-12 lg:py-0 w-full">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight tracking-tight">
-                Start Your Free Trial<br/>
-                & Fill <span className="text-primary text-gradient">Your Tables</span>
-              </h2>
-              <p className="text-gray-400 text-base md:text-lg max-w-lg mb-10 leading-relaxed font-medium">
-                Transform your restaurant into a digital powerhouse. Setup takes under an hour, with no credit card required.
-              </p>
-              <Link href="/download" className="bg-primary text-white font-black text-base px-10 py-4 rounded-full shadow-[0_0_40px_-10px_rgba(255,78,33,0.5)] hover:shadow-[0_0_60px_-10px_rgba(255,78,33,0.7)] hover:scale-105 transition-all">
-                Start 14-Day Free Trial
-              </Link>
-            </div>
+      {/* ── HIGH IMPACT BOTTOM CTA (Light Premium Theme) ── */}
+      <section className="w-full pt-32 pb-40 px-4 bg-white relative overflow-hidden flex flex-col items-center justify-center border-t border-gray-100">
+        
+        {/* Abstract Light Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-primary/5 rounded-[100%] blur-[100px] pointer-events-none" />
+        
+        {/* Subtle Light Grid Overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#f5f5f5_1px,transparent_1px),linear-gradient(to_bottom,#f5f5f5_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none" />
 
-            {/* Right Dynamic Shape (SaaS KDS View) */}
-            <div className="hidden lg:flex w-[320px] h-[380px] bg-white rounded-[40px] p-6 flex-col items-center justify-start shadow-2xl z-10 rotate-3 hover:rotate-0 transition-transform duration-500">
-              <div className="w-full border-b border-gray-100 pb-4 mb-4 flex justify-between items-center">
-                 <div className="text-black font-bold text-lg">Live KDS</div>
-                 <div className="text-xs font-bold text-white bg-green-500 px-3 py-1 rounded-full">Online</div>
-              </div>
-              
-              <div className="w-full bg-gray-50 rounded-2xl p-4 border border-gray-100 mb-3">
-                 <div className="flex justify-between items-center mb-2">
-                   <div className="text-sm font-bold text-black">Table 12</div>
-                   <div className="text-xs text-primary font-bold">Ticket #205</div>
-                 </div>
-                 <div className="text-xs text-gray-500 mb-1">Truffle Burger</div>
-                 <div className="text-[10px] text-gray-400 ml-2">+ Extra Truffle</div>
-              </div>
-              <div className="w-full bg-gray-50 rounded-2xl p-4 border border-gray-100">
-                 <div className="flex justify-between items-center mb-2">
-                   <div className="text-sm font-bold text-black">Table 4</div>
-                   <div className="text-xs text-primary font-bold">Ticket #206</div>
-                 </div>
-                 <div className="text-xs text-gray-500 mb-1">Spicy Tuna Roll</div>
-                 <div className="text-[10px] text-gray-400 ml-2">+ Avocado</div>
-              </div>
-            </div>
-            
-          </motion.div>
+        <div className="container mx-auto max-w-5xl relative z-10 flex flex-col items-center text-center">
+           
+           <motion.div {...fadeUp} className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-red-50 border border-red-100 text-primary mb-10 shadow-sm">
+             <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+             <span className="text-xs font-bold tracking-[0.2em] uppercase">Start Your Journey</span>
+           </motion.div>
+
+           <motion.div {...fadeUp}>
+             <h2 className="text-6xl md:text-7xl lg:text-8xl font-black text-black mb-8 tracking-tighter leading-[1.05]">
+               Ready to unlock your <br className="hidden md:block" />
+               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">revenue engine?</span>
+             </h2>
+           </motion.div>
+
+           <motion.div {...fadeUp} className="max-w-2xl">
+             <p className="text-gray-500 text-xl mb-12 leading-relaxed font-medium">
+               Join the top-tier operators who have abandoned chaotic tech stacks for a single, unified OS. Setup takes under an hour.
+             </p>
+           </motion.div>
+
+           <motion.div {...fadeUp} className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto">
+             <Link href="/download" className="w-full sm:w-auto bg-primary text-white font-bold text-lg px-12 py-5 rounded-full shadow-[0_20px_40px_-10px_rgba(255,78,33,0.3)] hover:shadow-[0_20px_60px_-10px_rgba(255,78,33,0.5)] hover:-translate-y-1 transition-all duration-300">
+               Start 14-Day Free Trial
+             </Link>
+             <Link href="/demo" className="w-full sm:w-auto bg-white text-black border border-gray-200 shadow-sm font-bold text-lg px-12 py-5 rounded-full hover:bg-gray-50 hover:-translate-y-1 transition-all duration-300">
+               Book a Demo
+             </Link>
+           </motion.div>
         </div>
       </section>
 
