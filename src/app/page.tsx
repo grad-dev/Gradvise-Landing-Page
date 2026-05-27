@@ -901,7 +901,6 @@ export default function Home() {
            </motion.div>
         </div>
       </section>
-
     </div>
   );
 }

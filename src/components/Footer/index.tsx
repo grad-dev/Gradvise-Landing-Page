@@ -4,52 +4,61 @@ export default function MainFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full py-16 border-t border-(--border)">
-      <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-16">
-          <div className="md:col-span-2">
-            <Link href="/" className="inline-block mb-4">
-              <span className="text-lg font-semibold font-serif tracking-tight text-(--foreground)">
-                Gradvise
-              </span>
-            </Link>
-            <p className="text-sm text-(--muted-foreground) max-w-xs leading-relaxed">
-              QR-first restaurant operations. Built for restaurants that care
-              about the details.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-xs font-semibold tracking-widest uppercase text-(--muted-foreground) mb-4">
-              Product
-            </h4>
-            <ul className="space-y-3">
-              <li><Link href="#features" className="text-sm text-(--muted-foreground) hover:text-(--foreground) transition-colors">Features</Link></li>
-              <li><Link href="#pricing" className="text-sm text-(--muted-foreground) hover:text-(--foreground) transition-colors">Pricing</Link></li>
-              <li><Link href="/demo" className="text-sm text-(--muted-foreground) hover:text-(--foreground) transition-colors">Demo</Link></li>
-              <li><Link href="/login" className="text-sm text-(--muted-foreground) hover:text-(--foreground) transition-colors">Sign In</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-xs font-semibold tracking-widest uppercase text-(--muted-foreground) mb-4">
-              Legal
-            </h4>
-            <ul className="space-y-3">
-              <li><Link href="/privacy" className="text-sm text-(--muted-foreground) hover:text-(--foreground) transition-colors">Privacy</Link></li>
-              <li><Link href="/terms" className="text-sm text-(--muted-foreground) hover:text-(--foreground) transition-colors">Terms</Link></li>
-              <li><Link href="/contact" className="text-sm text-(--muted-foreground) hover:text-(--foreground) transition-colors">Contact</Link></li>
-            </ul>
-          </div>
-        </div>
+    <footer className="w-full bg-white border-t border-gray-100 pt-20 pb-10 px-4 md:px-8">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
+            {/* Brand Column */}
+            <div className="lg:col-span-2">
+              <Link href="/" className="flex items-center gap-2 group mb-6">
+                 <div className="w-10 h-10 bg-black text-white rounded-xl flex items-center justify-center font-bold text-xl group-hover:bg-primary transition-colors shadow-lg">G</div>
+                 <span className="text-2xl font-black tracking-tighter text-black">Gradvise.</span>
+              </Link>
+              <p className="text-gray-500 max-w-sm font-medium leading-relaxed mb-8">
+                The ultimate revenue operating system for modern restaurants. Stop juggling tablets and start filling tables.
+              </p>
+            </div>
 
-        <div className="pt-8 border-t border-(--border) flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-(--muted-foreground)">
-          <span>&copy; {year} Gradvise. All rights reserved.</span>
-          <div className="flex gap-6">
-            <Link href="#" className="hover:text-(--foreground) transition-colors">Twitter</Link>
-            <Link href="#" className="hover:text-(--foreground) transition-colors">LinkedIn</Link>
-            <Link href="#" className="hover:text-(--foreground) transition-colors">Instagram</Link>
+            {/* Links Columns */}
+            <div>
+              <h4 className="font-bold text-black mb-6 uppercase tracking-widest text-xs">Platform</h4>
+              <ul className="space-y-4">
+                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors font-medium">Smart KDS</Link></li>
+                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors font-medium">Marketing Engine</Link></li>
+                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors font-medium">Guest Profiles</Link></li>
+                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors font-medium">Integrations</Link></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-bold text-black mb-6 uppercase tracking-widest text-xs">Company</h4>
+              <ul className="space-y-4">
+                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors font-medium">About Us</Link></li>
+                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors font-medium">Careers</Link></li>
+                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors font-medium">Blog</Link></li>
+                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors font-medium">Contact</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-bold text-black mb-6 uppercase tracking-widest text-xs">Legal</h4>
+              <ul className="space-y-4">
+                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors font-medium">Privacy Policy</Link></li>
+                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors font-medium">Terms of Service</Link></li>
+                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors font-medium">Cookie Policy</Link></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-gray-100">
+             <p className="text-gray-400 font-medium text-sm mb-4 md:mb-0">
+               © {year} Gradvise Inc. All rights reserved.
+             </p>
+             <div className="flex items-center gap-6">
+                <Link href="#" className="text-gray-400 hover:text-black transition-colors"><span className="sr-only">Twitter</span><svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></Link>
+                <Link href="#" className="text-gray-400 hover:text-black transition-colors"><span className="sr-only">LinkedIn</span><svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></Link>
+             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
   );
 }
