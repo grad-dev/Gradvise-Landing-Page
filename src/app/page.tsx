@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Play, Settings, Users, Truck, Sparkles, TrendingUp, ChevronRight, Activity, ShieldCheck, Zap, Clock, Star, ChefHat, BarChart3, MessageCircle, Check, Smartphone, Brain, PieChart } from 'lucide-react';
+import { ArrowRight, Play, Settings, Users, Truck, Sparkles, TrendingUp, ChevronRight, Activity, ShieldCheck, Zap, Clock, Star, ChefHat, BarChart3, MessageCircle, Check, Smartphone, Brain, PieChart, X, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState, useRef } from 'react';
 
@@ -25,6 +25,30 @@ const staggerItem = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const } }
 };
+
+function FaqItem({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div
+      className={`bg-white border rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer ${
+        open ? 'border-red-200 shadow-sm shadow-primary/5' : 'border-gray-100 hover:border-gray-200'
+      }`}
+      onClick={() => setOpen(!open)}
+    >
+      <div className="flex items-center justify-between px-7 py-5">
+        <span className="font-black text-black text-[15px] leading-snug pr-4">{question}</span>
+        <ChevronDown
+          className={`w-5 h-5 text-gray-400 shrink-0 transition-transform duration-300 ${open ? 'rotate-180 text-primary' : ''}`}
+        />
+      </div>
+      {open && (
+        <div className="px-7 pb-5">
+          <p className="text-gray-500 font-medium text-sm leading-relaxed">{answer}</p>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -862,6 +886,171 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── WHY CHOOSE US ── */}
+      <section className="w-full py-28 px-4 bg-white border-t border-gray-100">
+        <div className="container mx-auto max-w-7xl">
+          <motion.div {...fadeUp} className="text-center mb-16">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-red-50 border border-red-100 text-primary mb-6 shadow-sm">
+              <ShieldCheck className="w-4 h-4" />
+              <span className="text-xs font-bold tracking-[0.2em] uppercase">Why Gradvise</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-black tracking-tighter leading-[1.1] mb-4">
+              Your current system is{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">costing you daily.</span>
+            </h2>
+            <p className="text-gray-500 font-medium max-w-2xl mx-auto text-lg mb-12">
+              Here's what running a restaurant looks like today 
+            </p>
+          </motion.div>
+
+          {/* Before / After cards */}
+          <motion.div {...fadeUp} className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+
+            {/* WITHOUT column — white with gray muted style */}
+            <div className="bg-white border border-gray-200 rounded-[32px] p-8 md:p-10">
+              <div className="flex items-center gap-3 mb-8 pb-6 border-b border-gray-100">
+                <div className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center">
+                  <X className="w-4 h-4 text-gray-400" />
+                </div>
+                <div>
+                  <p className="font-black text-gray-700 text-base">Without Gradvise</p>
+                  <p className="text-xs text-gray-400 font-medium">The daily reality for most restaurants</p>
+                </div>
+              </div>
+              <div className="space-y-5">
+                {[
+                  { pain: 'Menu changes take days & cost money', detail: 'Call the printer, wait 3–5 days, pay $200+ every time. Wrong prices stay live until new menus arrive.' },
+                  { pain: 'No idea who your regulars are', detail: 'Guests walk in and out — zero record of who they are, how often they visit, or what they like.' },
+                  { pain: 'Marketing is manual and expensive', detail: 'Post on Instagram and hope. No targeted emails, no automated campaigns, no win-back for lapsed guests.' },
+                  { pain: 'Kitchen runs on paper tickets & shouting', detail: 'Tickets get wet, lost, or misread. Expo chefs coordinate stations by yelling across the kitchen.' },
+                  { pain: 'Losses only visible at month-end', detail: "Food cost variance and missed upsells only appear in last month's P&L — too late to fix anything." },
+                  { pain: 'Upselling depends entirely on staff', detail: 'Great servers upsell well. Short-staffed Tuesday? That revenue is just gone with no fallback.' },
+                ].map(({ pain, detail }) => (
+                  <div key={pain} className="flex gap-4">
+                    <div className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5">
+                      <X className="w-3 h-3 text-gray-400" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-gray-600 text-sm mb-0.5 line-through decoration-gray-300">{pain}</p>
+                      <p className="text-gray-400 text-xs font-medium leading-relaxed">{detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* WITH GRADVISE column — white with red accent */}
+            <div className="bg-white border-2 border-primary rounded-[32px] p-8 md:p-10 relative overflow-hidden shadow-lg shadow-primary/10">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-orange-400 rounded-t-[30px]" />
+              <div className="flex items-center gap-3 mb-8 pb-6 border-b border-red-100">
+                <div className="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+                  <Check className="w-4 h-4 text-primary" />
+                </div>
+                <div>
+                  <p className="font-black text-black text-base">With Gradvise</p>
+                  <p className="text-xs text-primary/60 font-semibold">What your operation looks like from day one</p>
+                </div>
+              </div>
+              <div className="space-y-5">
+                {[
+                  { win: 'Menu live in seconds, not days', detail: 'Change a price, add a special, 86 an item — updates go live instantly across all tables the moment you hit save. Zero print cost.' },
+                  { win: 'Every guest has a profile from visit one', detail: 'Gradvise automatically builds a CRM record — visits, spend, preferences, birthdays — with no manual entry ever needed.' },
+                  { win: 'Marketing runs itself, every day', detail: 'Win-back emails fire when a regular goes quiet. Birthday rewards send automatically. Promos reach the right guests at the right time.' },
+                  { win: 'Kitchen runs on live digital screens', detail: 'Orders route to the right station instantly. Color-coded timers replace paper chaos. Every prep time tracked and optimised.' },
+                  { win: 'Revenue gaps visible in real time', detail: 'Live dashboards show food cost variance, RevPASH, and upsell rate while you can still act on it — not a month later.' },
+                  { win: 'Upsells happen on every single order', detail: 'Smart menu logic suggests add-ons and pairings at point of ordering — consistent on every cover, every shift, regardless of staff.' },
+                ].map(({ win, detail }) => (
+                  <div key={win} className="flex gap-4">
+                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-black text-black text-sm mb-0.5">{win}</p>
+                      <p className="text-gray-500 text-xs font-medium leading-relaxed">{detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Stat bar */}
+          <motion.div {...fadeUp} className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-20">
+            {[
+              { stat: '+23%', label: 'Average revenue increase in first 90 days', icon: TrendingUp },
+              { stat: '60 min', label: 'Average time to go fully live with Gradvise', icon: Zap },
+              { stat: '5-in-1', label: 'Tools replaced — menu, CRM, KDS, marketing, analytics', icon: ShieldCheck },
+            ].map(({ stat, label, icon: Icon }) => (
+              <div key={stat} className="bg-gray-50 border border-gray-100 rounded-[24px] p-7 flex items-center gap-5 hover:border-red-200 hover:shadow-md transition-all">
+                <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center shrink-0">
+                  <Icon className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-2xl font-black text-black tracking-tight">{stat}</p>
+                  <p className="text-xs text-gray-500 font-medium leading-snug mt-0.5">{label}</p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="w-full py-28 px-4 bg-gray-50 border-t border-gray-100">
+        <div className="container mx-auto max-w-4xl">
+          <motion.div {...fadeUp} className="text-center mb-14">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-red-50 border border-red-100 text-primary mb-6 shadow-sm">
+              <MessageCircle className="w-4 h-4" />
+              <span className="text-xs font-bold tracking-[0.2em] uppercase">FAQ</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-black tracking-tighter leading-[1.1] mb-4">
+              Questions we hear{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">all the time.</span>
+            </h2>
+            <p className="text-gray-500 font-medium max-w-lg mx-auto">Everything you need to know before you start. Can't find your answer? Email us at gradviseofficial@gmail.com</p>
+          </motion.div>
+
+          <div className="space-y-3">
+            {[
+              {
+                q: 'How long does it take to get set up?',
+                a: 'Most restaurants are fully live within 60 minutes. Our onboarding team imports your existing menu, connects your POS, and walks you through the dashboard in a single call. No IT team required.'
+              },
+              {
+                q: 'Is there really a 30-day free trial?',
+                a: 'Yes — 30 full days, no credit card required. You get access to every feature on your chosen plan, with full onboarding support. If you decide Gradvise isn\'t for you, just cancel. No questions asked.'
+              },
+              {
+                q: 'Which POS systems do you integrate with?',
+                a: 'Gradvise natively integrates with Toast, Square, Clover, Lightspeed, and Stripe Terminal. If you use a different POS, our team will work with you to build a custom connection — most are completed within 5 business days.'
+              },
+              {
+                q: 'Do my guests need to download an app?',
+                a: 'No app download needed — ever. Guests interact with Gradvise through a QR code on their table that opens directly in their browser. Zero friction, zero barrier to engagement.'
+              },
+              {
+                q: 'Is my guest data secure?',
+                a: 'All data is encrypted at rest (AES-256) and in transit (TLS 1.3). We are SOC 2 Type II compliant and conduct annual independent security audits. Your guest data is never sold or shared with third parties.'
+              },
+              {
+                q: 'Can I use Gradvise for multiple locations?',
+                a: 'Yes. Multi-location management is available on our Growth and Enterprise plans. Each location gets its own dashboard, and you get a unified view across all venues with consolidated reporting.'
+              },
+              {
+                q: 'What happens to my data if I cancel?',
+                a: 'Your data belongs to you, always. On cancellation, we give you a full export of all your guest profiles, transaction history, and marketing data in standard CSV/JSON formats. We retain your data for 90 days after cancellation in case you change your mind.'
+              },
+              {
+                q: 'Do you offer onboarding support?',
+                a: 'Every plan includes a dedicated onboarding call with a restaurant operations specialist. Growth and Enterprise plans include ongoing priority support via email and phone, plus quarterly business reviews.'
+              },
+            ].map(({ q, a }, i) => (
+              <FaqItem key={i} question={q} answer={a} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── HIGH IMPACT BOTTOM CTA (Light Premium Theme) ── */}
       <section className="w-full pt-32 pb-40 px-4 bg-white relative overflow-hidden flex flex-col items-center justify-center border-t border-gray-100">
         
@@ -893,7 +1082,7 @@ export default function Home() {
 
            <motion.div {...fadeUp} className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto">
              <Link href="/download" className="w-full sm:w-auto bg-primary text-white font-bold text-lg px-12 py-5 rounded-full shadow-[0_20px_40px_-10px_rgba(255,78,33,0.3)] hover:shadow-[0_20px_60px_-10px_rgba(255,78,33,0.5)] hover:-translate-y-1 transition-all duration-300">
-               Start 14-Day Free Trial
+               Start 30-Day Free Trial
              </Link>
              <Link href="/demo" className="w-full sm:w-auto bg-white text-black border border-gray-200 shadow-sm font-bold text-lg px-12 py-5 rounded-full hover:bg-gray-50 hover:-translate-y-1 transition-all duration-300">
                Book a Demo
