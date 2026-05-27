@@ -1,8 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Play, Settings, Users, Truck, Sparkles, TrendingUp, ChevronRight, Activity, ShieldCheck, Zap, Clock, Star, ChefHat, BarChart3, MessageCircle, Check, Smartphone, Brain, PieChart, X, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 
 // Animation Configurations
@@ -30,22 +31,33 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
   return (
     <div
-      className={`bg-white border rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer ${
-        open ? 'border-red-200 shadow-sm shadow-primary/5' : 'border-gray-100 hover:border-gray-200'
+      className={`group bg-white border rounded-[24px] overflow-hidden transition-all duration-300 cursor-pointer ${
+        open ? 'border-primary shadow-lg shadow-primary/10 ring-1 ring-primary/20' : 'border-gray-100 hover:border-red-200 hover:shadow-md'
       }`}
       onClick={() => setOpen(!open)}
     >
-      <div className="flex items-center justify-between px-7 py-5">
-        <span className="font-black text-black text-[15px] leading-snug pr-4">{question}</span>
-        <ChevronDown
-          className={`w-5 h-5 text-gray-400 shrink-0 transition-transform duration-300 ${open ? 'rotate-180 text-primary' : ''}`}
-        />
-      </div>
-      {open && (
-        <div className="px-7 pb-5">
-          <p className="text-gray-500 font-medium text-sm leading-relaxed">{answer}</p>
+      <div className="flex items-center justify-between px-6 sm:px-8 py-6">
+        <span className="font-bold text-black text-base leading-snug pr-4">{question}</span>
+        <div className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-300 shrink-0 ${open ? 'bg-primary text-white' : 'bg-gray-50 text-gray-400 group-hover:bg-red-50 group-hover:text-primary'}`}>
+          <ChevronDown
+            className={`w-5 h-5 transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
+          />
         </div>
-      )}
+      </div>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          >
+            <div className="px-6 sm:px-8 pb-7 pt-1">
+              <p className="text-gray-500 font-medium text-[15px] leading-relaxed">{answer}</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -309,8 +321,8 @@ export default function Home() {
                 transition={{ duration: 1, delay: 0.1, type: "spring", stiffness: 50 }}
                 className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[300px] lg:w-[400px] h-[300px] lg:h-[400px] rounded-[50px] overflow-hidden shadow-2xl z-20 hidden md:block"
               >
-                <div className="w-full h-full animate-[float-slow_12s_ease-in-out_infinite]">
-                  <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover scale-110" alt="Busy Restaurant Kitchen" />
+                <div className="w-full h-full animate-[float-slow_12s_ease-in-out_infinite] relative">
+                  <Image src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=1000" fill className="object-cover scale-110" alt="Busy Restaurant Kitchen" sizes="(max-width: 768px) 100vw, 50vw" priority />
                 </div>
               </motion.div>
 
@@ -820,8 +832,9 @@ export default function Home() {
                  ].map((testimonial, index) => (
                     <div key={index} className="w-full flex-shrink-0 h-full relative snap-center group/card overflow-hidden">
                       {/* Massive Immersive Background */}
-                      <img src={testimonial.image} className="w-full h-full object-cover group-hover/card:scale-[1.03] transition-transform duration-[3s] ease-out" alt={testimonial.author} />
+                      <Image src={testimonial.image} fill className="object-cover group-hover/card:scale-[1.03] transition-transform duration-[3s] ease-out" alt={testimonial.author} sizes="100vw" />
                       
+
                       {/* Soft Gradient Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none" />
                       <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent pointer-events-none" />
@@ -975,19 +988,21 @@ export default function Home() {
           </motion.div>
 
           {/* Stat bar */}
-          <motion.div {...fadeUp} className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-20">
+          <motion.div {...fadeUp} className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-20 relative">
+            <div className="absolute inset-0 bg-gradient-to-b from-gray-50/0 to-gray-50/50 rounded-3xl -z-10 pointer-events-none" />
             {[
               { stat: '+23%', label: 'Average revenue increase in first 90 days', icon: TrendingUp },
               { stat: '60 min', label: 'Average time to go fully live with Gradvise', icon: Zap },
               { stat: '5-in-1', label: 'Tools replaced — menu, CRM, KDS, marketing, analytics', icon: ShieldCheck },
             ].map(({ stat, label, icon: Icon }) => (
-              <div key={stat} className="bg-gray-50 border border-gray-100 rounded-[24px] p-7 flex items-center gap-5 hover:border-red-200 hover:shadow-md transition-all">
-                <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center shrink-0">
-                  <Icon className="w-5 h-5 text-primary" />
+              <div key={stat} className="group bg-white border border-gray-100 rounded-[24px] p-7 flex items-center gap-5 hover:border-red-200 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-red-50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-red-50 transition-all duration-300">
+                  <Icon className="w-6 h-6 text-gray-400 group-hover:text-primary transition-colors duration-300" />
                 </div>
-                <div>
-                  <p className="text-2xl font-black text-black tracking-tight">{stat}</p>
-                  <p className="text-xs text-gray-500 font-medium leading-snug mt-0.5">{label}</p>
+                <div className="relative z-10">
+                  <p className="text-3xl font-black text-black tracking-tighter group-hover:text-primary transition-colors duration-300">{stat}</p>
+                  <p className="text-[13px] text-gray-500 font-medium leading-relaxed mt-1">{label}</p>
                 </div>
               </div>
             ))}

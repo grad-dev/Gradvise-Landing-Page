@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Target, Heart, Shield, Zap } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const fadeUp = {
   initial: { opacity: 0, y: 40 },
@@ -33,7 +34,7 @@ export default function AboutPage() {
         
         {/* Hero Image */}
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2, duration: 0.8 }} className="w-full h-[400px] md:h-[500px] bg-gray-50 rounded-[32px] border border-gray-100 shadow-xl overflow-hidden relative group mb-32">
-           <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[3s]" alt="Gradvise Team" />
+           <Image src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=2000" fill className="object-cover group-hover:scale-105 transition-transform duration-[3s]" alt="Gradvise Team" sizes="100vw" priority />
            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-8 md:p-12">
              <div className="text-left max-w-xl">
                 <div className="text-white text-2xl md:text-4xl font-bold tracking-tight mb-2">Built in San Francisco</div>
