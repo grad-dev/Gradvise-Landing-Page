@@ -168,14 +168,14 @@ export default function Home() {
                 className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
               >
                 <Link
-                  href="/start"
+                  href="/contact"
                   className="w-full sm:w-auto inline-flex h-14 items-center justify-center rounded-full bg-gradient-hero px-10 text-base font-bold text-white shadow-xl shadow-primary/25 hover:scale-[1.02] active:scale-[0.98] transition-all group"
                 >
                   Start Your Free Trial
                   <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
-                  href="/demo"
+                  href="/contact"
                   className="w-full sm:w-auto inline-flex h-14 items-center justify-center rounded-full border-2 border-gray-100 px-8 text-base font-bold text-black hover:bg-gray-50 hover:border-gray-200 transition-all gap-2"
                 >
                   <Play className="w-5 h-5" />
@@ -1096,10 +1096,10 @@ export default function Home() {
            </motion.div>
 
            <motion.div {...fadeUp} className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto">
-             <Link href="/download" className="w-full sm:w-auto bg-primary text-white font-bold text-lg px-12 py-5 rounded-full shadow-[0_20px_40px_-10px_rgba(255,78,33,0.3)] hover:shadow-[0_20px_60px_-10px_rgba(255,78,33,0.5)] hover:-translate-y-1 transition-all duration-300">
+             <Link href="/contact" className="w-full sm:w-auto bg-primary text-white font-bold text-lg px-12 py-5 rounded-full shadow-[0_20px_40px_-10px_rgba(255,78,33,0.3)] hover:shadow-[0_20px_60px_-10px_rgba(255,78,33,0.5)] hover:-translate-y-1 transition-all duration-300">
                Start 30-Day Free Trial
              </Link>
-             <Link href="/demo" className="w-full sm:w-auto bg-white text-black border border-gray-200 shadow-sm font-bold text-lg px-12 py-5 rounded-full hover:bg-gray-50 hover:-translate-y-1 transition-all duration-300">
+             <Link href="/contact" className="w-full sm:w-auto bg-white text-black border border-gray-200 shadow-sm font-bold text-lg px-12 py-5 rounded-full hover:bg-gray-50 hover:-translate-y-1 transition-all duration-300">
                Book a Demo
              </Link>
            </motion.div>
