@@ -25,19 +25,44 @@ const team = [
 export default function CareersPage() {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', role: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Career Application – ${form.role || 'General'} – ${form.name}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nRole of Interest: ${form.role}\n\n${form.message}`
-    );
-    window.location.href = `mailto:gradviseofficial@gmail.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: '21ac5179-2398-48f3-9b17-f333e4dbe3e9',
+          subject: `Career Application – ${form.role || 'General'} – ${form.name}`,
+          from_name: form.name,
+          email: form.email,
+          Role: form.role,
+          Message: form.message,
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      alert('Network error. Please try again or email us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -124,7 +149,7 @@ export default function CareersPage() {
                 <Send className="w-7 h-7 text-green-600" />
               </div>
               <h3 className="text-2xl font-black text-black mb-2">Message sent!</h3>
-              <p className="text-gray-500 font-medium">Your email client should have opened. We'll review your application and get back to you within 2–3 days.</p>
+              <p className="text-gray-500 font-medium">We've received your application and will get back to you within 2–3 days.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="bg-gray-50 border border-gray-100 rounded-[32px] p-8 md:p-10 space-y-5">
@@ -195,10 +220,11 @@ export default function CareersPage() {
 
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center bg-black text-white font-bold rounded-full py-4 px-8 hover:bg-primary transition-all duration-300 group"
+                disabled={isSubmitting}
+                className="w-full inline-flex items-center justify-center bg-black text-white font-bold rounded-full py-4 px-8 hover:bg-primary transition-all duration-300 group disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Send Application
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                {isSubmitting ? 'Sending...' : 'Send Application'}
+                {!isSubmitting && <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />}
               </button>
 
               <p className="text-center text-xs text-gray-400 font-medium">

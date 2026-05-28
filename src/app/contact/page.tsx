@@ -20,19 +20,44 @@ const faqs = [
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ firstName: '', lastName: '', email: '', restaurant: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Contact from ${form.firstName} ${form.lastName} – ${form.restaurant}`);
-    const body = encodeURIComponent(
-      `Name: ${form.firstName} ${form.lastName}\nEmail: ${form.email}\nRestaurant: ${form.restaurant}\n\n${form.message}`
-    );
-    window.location.href = `mailto:gradviseofficial@gmail.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: '21ac5179-2398-48f3-9b17-f333e4dbe3e9',
+          subject: 'New Contact Request - Plateio Website',
+          from_name: `${form.firstName} ${form.lastName}`,
+          email: form.email,
+          Restaurant: form.restaurant,
+          Message: form.message,
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      alert('Network error. Please try again or email us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -85,7 +110,7 @@ export default function ContactPage() {
                   <Send className="w-6 h-6 text-green-600" />
                 </div>
                 <h3 className="text-xl font-black text-black mb-2">Message sent!</h3>
-                <p className="text-gray-500 font-medium text-sm">Your email client should have opened with the message pre-filled. We'll reply as soon as we can.</p>
+                <p className="text-gray-500 font-medium text-sm">We've received your message and our team will get back to you shortly.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
@@ -111,9 +136,9 @@ export default function ContactPage() {
                   <label className="text-xs font-bold uppercase tracking-widest text-gray-400 block mb-2">How can we help?</label>
                   <textarea name="message" required rows={4} placeholder="Tell us about your restaurant and what you need..." value={form.message} onChange={handleChange} className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-black font-medium focus:outline-none focus:border-primary transition-colors resize-none" />
                 </div>
-                <button type="submit" className="w-full inline-flex items-center justify-center bg-black text-white font-bold rounded-full py-4 px-8 hover:bg-primary transition-all duration-300 group">
-                  Send Message
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                <button type="submit" disabled={isSubmitting} className="w-full inline-flex items-center justify-center bg-black text-white font-bold rounded-full py-4 px-8 hover:bg-primary transition-all duration-300 group disabled:opacity-70 disabled:cursor-not-allowed">
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {!isSubmitting && <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />}
                 </button>
                 <p className="text-center text-xs text-gray-400 font-medium">
                   Sends to <span className="font-bold text-gray-600">gradviseofficial@gmail.com</span>
