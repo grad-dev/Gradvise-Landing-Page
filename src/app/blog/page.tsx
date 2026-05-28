@@ -4,15 +4,15 @@ import { BookOpen, Clock, ArrowRight, Tag } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Restaurant Blog | Gradvise',
+  title: 'Restaurant Blog | Plateio',
   description: 'Practical guides, case studies, and data-driven strategies to help restaurant operators increase revenue, reduce costs, and build lasting guest loyalty.',
   keywords: ['restaurant blog', 'restaurant management tips', 'restaurant marketing guide', 'restaurant operations', 'increase restaurant revenue'],
   alternates: { canonical: '/blog' },
   openGraph: {
-    title: 'Restaurant Blog | Gradvise',
+    title: 'Restaurant Blog | Plateio',
     description: 'Practical guides and strategies to help restaurant operators grow revenue and reduce costs.',
     type: 'website',
-    url: 'https://gradvise.com/blog',
+    url: 'https://plateio.in/blog',
   },
 };
 
@@ -36,7 +36,7 @@ export default function BlogPage() {
         <div className="text-center mb-16 max-w-3xl mx-auto pt-8">
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-red-50 border border-red-100 text-primary mb-8 shadow-sm">
             <BookOpen className="w-4 h-4" />
-            <span className="text-xs font-bold tracking-[0.2em] uppercase">Gradvise Blog</span>
+            <span className="text-xs font-bold tracking-[0.2em] uppercase">Plateio Blog</span>
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-black mb-6 tracking-tighter leading-[1.1]">
             Grow your restaurant{' '}

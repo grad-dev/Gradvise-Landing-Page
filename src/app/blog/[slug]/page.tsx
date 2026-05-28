@@ -28,7 +28,7 @@ export async function generateMetadata({
       type: 'article',
       publishedTime: post.date,
       tags: post.keywords,
-      url: `https://gradvise.com/blog/${post.slug}`,
+      url: `https://plateio.in/blog/${post.slug}`,
     },
     twitter: {
       card: 'summary_large_image',
@@ -126,12 +126,12 @@ export default async function BlogPostPage({
           <div className="bg-black rounded-[28px] p-8 md:p-10 mt-12 relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-primary/25 via-transparent to-transparent" />
             <div className="relative z-10">
-              <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Powered by Gradvise</p>
+              <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Powered by Plateio</p>
               <h3 className="text-2xl font-black text-white tracking-tight mb-3 leading-tight">
                 Ready to put this into practice?
               </h3>
               <p className="text-white/50 font-medium mb-6 text-sm leading-relaxed max-w-lg">
-                Gradvise gives you the tools to implement everything in this article — from smart inventory tracking to automated marketing and real-time analytics.
+                Plateio gives you the tools to implement everything in this article — from smart inventory tracking to automated marketing and real-time analytics.
               </p>
               <Link
                 href="/contact"

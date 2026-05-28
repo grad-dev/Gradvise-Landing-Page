@@ -14,7 +14,7 @@ const sections = [
   {
     id: 'acceptance',
     title: '1. Acceptance of Terms',
-    content: `By accessing or using the Gradvise platform, website, or any associated services (collectively, the "Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not access or use the Service.
+    content: `By accessing or using the Plateio platform, website, or any associated services (collectively, the "Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not access or use the Service.
 
 These Terms apply to all visitors, users, and others who access or use the Service. If you are accessing the Service on behalf of a business or other entity, you represent that you have the authority to bind that entity to these Terms.`,
   },
@@ -28,15 +28,15 @@ These Terms apply to all visitors, users, and others who access or use the Servi
 • Maintain the security of your password and accept all risks of unauthorized access
 • Promptly notify us if you discover or suspect any security breaches related to the Service
 
-You are responsible for all activities that occur under your account. Gradvise is not liable for any loss or damage arising from your failure to comply with the above requirements.`,
+You are responsible for all activities that occur under your account. Plateio is not liable for any loss or damage arising from your failure to comply with the above requirements.`,
   },
   {
     id: 'subscription',
     title: '3. Subscription & Billing',
-    content: `Gradvise offers subscription-based access to the Service. By subscribing, you agree to pay all fees in accordance with the pricing and payment terms in effect when you subscribe.
+    content: `Plateio offers subscription-based access to the Service. By subscribing, you agree to pay all fees in accordance with the pricing and payment terms in effect when you subscribe.
 
 • Subscriptions are billed monthly or annually, in advance
-• You authorize Gradvise to charge your payment method on a recurring basis
+• You authorize Plateio to charge your payment method on a recurring basis
 • All fees are non-refundable except as required by law or as explicitly stated in our Refund Policy
 • We reserve the right to change pricing with 30 days' notice to existing subscribers
 • Failure to pay may result in suspension or termination of your account
@@ -54,29 +54,29 @@ Your subscription will automatically renew unless you cancel at least 24 hours b
 • Attempt to gain unauthorized access to any portion of the Service or its related systems
 • Interfere with or disrupt the integrity or performance of the Service
 • Use any automated means to scrape, crawl, or extract data from the Service
-• Resell or sublicense access to the Service without written authorization from Gradvise
+• Resell or sublicense access to the Service without written authorization from Plateio
 
-Gradvise reserves the right to terminate your access to the Service if we determine, in our sole discretion, that you have violated these terms.`,
+Plateio reserves the right to terminate your access to the Service if we determine, in our sole discretion, that you have violated these terms.`,
   },
   {
     id: 'intellectual-property',
     title: '5. Intellectual Property',
-    content: `The Service and its original content, features, and functionality are owned by Gradvise Inc. and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
+    content: `The Service and its original content, features, and functionality are owned by Plateio Inc. and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
 
-You retain ownership of all data and content you upload to the Service ("Customer Data"). By uploading Customer Data, you grant Gradvise a limited, non-exclusive license to use, process, and store that data solely to provide the Service.
+You retain ownership of all data and content you upload to the Service ("Customer Data"). By uploading Customer Data, you grant Plateio a limited, non-exclusive license to use, process, and store that data solely to provide the Service.
 
 You may not copy, modify, distribute, sell, or lease any part of the Service, nor may you reverse engineer or attempt to extract the source code of the Service.`,
   },
   {
     id: 'limitation',
     title: '6. Limitation of Liability',
-    content: `To the maximum extent permitted by applicable law, Gradvise and its affiliates, officers, employees, agents, partners, and licensors shall not be liable for:
+    content: `To the maximum extent permitted by applicable law, Plateio and its affiliates, officers, employees, agents, partners, and licensors shall not be liable for:
 
 • Any indirect, incidental, special, consequential, or punitive damages
 • Any loss of profits, revenue, data, goodwill, or other intangible losses
 • Any damages related to your access to, or inability to access, the Service
 
-In no event shall Gradvise's total liability to you for all claims relating to the Service exceed the amount paid by you to Gradvise in the 12 months preceding the claim.`,
+In no event shall Plateio's total liability to you for all claims relating to the Service exceed the amount paid by you to Plateio in the 12 months preceding the claim.`,
   },
   {
     id: 'termination',

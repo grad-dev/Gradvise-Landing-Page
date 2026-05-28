@@ -27,14 +27,14 @@ export default function AboutPage() {
                We build the <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">engine</span> behind great restaurants.
              </h1>
              <p className="text-lg md:text-xl text-gray-500 leading-relaxed max-w-3xl mx-auto font-medium">
-               Gradvise was founded on a simple premise: chefs should focus on food, not fighting with chaotic, disjointed tech stacks. We're engineering the ultimate unified operating system for modern dining, designed by hospitality veterans for hospitality professionals.
+               Plateio was founded on a simple premise: chefs should focus on food, not fighting with chaotic, disjointed tech stacks. We're engineering the ultimate unified operating system for modern dining, designed by hospitality veterans for hospitality professionals.
              </p>
           </motion.div>
         </div>
         
         {/* Hero Image */}
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2, duration: 0.8 }} className="w-full h-[400px] md:h-[500px] bg-gray-50 rounded-[32px] border border-gray-100 shadow-xl overflow-hidden relative group mb-32">
-           <Image src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=2000" fill className="object-cover group-hover:scale-105 transition-transform duration-[3s]" alt="Gradvise Team" sizes="100vw" priority />
+           <Image src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=2000" fill className="object-cover group-hover:scale-105 transition-transform duration-[3s]" alt="Plateio Team" sizes="100vw" priority />
            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-8 md:p-12">
              <div className="text-left max-w-xl">
                 <div className="text-white text-2xl md:text-4xl font-bold tracking-tight mb-2">Built in San Francisco</div>
@@ -46,7 +46,7 @@ export default function AboutPage() {
         {/* By The Numbers */}
         <div className="mb-32">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-black mb-4">Gradvise By The Numbers</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-black mb-4">Plateio By The Numbers</h2>
             <p className="text-gray-500 font-medium text-lg max-w-2xl mx-auto">The impact we've made across the hospitality industry.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

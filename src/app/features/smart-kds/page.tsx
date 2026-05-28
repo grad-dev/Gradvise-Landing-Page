@@ -12,7 +12,7 @@ const fadeUp = {
 
 const howItWorks = [
   { step: '01', title: 'Orders flow in automatically', desc: 'The moment a guest places an order — dine-in, takeout, or delivery — it instantly appears on the Smart KDS without any manual input from your staff.' },
-  { step: '02', title: 'Items are routed to the right station', desc: 'Gradvise learns your kitchen layout and automatically sends each item to the correct prep station: grill, fry, cold, or expo. No more lost tickets.' },
+  { step: '02', title: 'Items are routed to the right station', desc: 'Plateio learns your kitchen layout and automatically sends each item to the correct prep station: grill, fry, cold, or expo. No more lost tickets.' },
   { step: '03', title: 'Timers track every item in real-time', desc: 'Color-coded timers turn yellow, then red when items are taking longer than expected, giving your expo chef instant visibility into what needs attention.' },
   { step: '04', title: 'Every second is captured as data', desc: 'Every prep time, delay, and modification is recorded. Over time, the system identifies your slowest menu items, peak bottleneck hours, and top-performing stations.' },
 ];
@@ -49,7 +49,7 @@ export default function SmartKDSPage() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">command center.</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-500 leading-relaxed font-medium max-w-2xl mx-auto">
-            Gradvise's Smart Kitchen Display System eliminates paper tickets, reduces errors, and gives your expo chef full real-time visibility into every order in the building.
+            Plateio's Smart Kitchen Display System eliminates paper tickets, reduces errors, and gives your expo chef full real-time visibility into every order in the building.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
             <Link href="/contact" className="inline-flex items-center justify-center bg-black text-white font-bold rounded-full py-3.5 px-8 hover:bg-primary transition-all duration-300 group">

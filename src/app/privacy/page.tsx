@@ -14,9 +14,9 @@ const sections = [
   {
     id: 'introduction',
     title: '1. Introduction',
-    content: `Gradvise Inc. ("Gradvise," "we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our platform, website, and services.
+    content: `Plateio Inc. ("Plateio," "we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our platform, website, and services.
 
-By accessing or using the Gradvise platform, you agree to the collection and use of information in accordance with this policy. If you disagree with the terms, please do not access the service.`,
+By accessing or using the Plateio platform, you agree to the collection and use of information in accordance with this policy. If you disagree with the terms, please do not access the service.`,
   },
   {
     id: 'information-we-collect',
@@ -36,7 +36,7 @@ We also collect data automatically when you use our services, including your IP 
     title: '3. How We Use Your Information',
     content: `We use the information we collect to:
 
-• Provide, operate, and improve the Gradvise platform
+• Provide, operate, and improve the Plateio platform
 • Process transactions and send related information including purchase confirmations and invoices
 • Send promotional communications (you may opt out at any time)
 • Monitor and analyze usage trends to improve your experience
@@ -51,7 +51,7 @@ We do not sell or rent your personal data to third parties for their marketing p
     content: `We may share your information with:
 
 • Service Providers: Third-party vendors who perform services on our behalf (e.g., Stripe for payments, AWS for hosting, SendGrid for email delivery). These providers are contractually obligated to protect your data.
-• Business Partners: With your explicit consent, we may share data with POS providers or delivery platforms you connect to Gradvise.
+• Business Partners: With your explicit consent, we may share data with POS providers or delivery platforms you connect to Plateio.
 • Legal Requirements: We may disclose information if required by law or in good faith belief that such action is necessary to comply with legal process, protect our rights, or protect the safety of others.
 • Business Transfers: In the event of a merger, acquisition, or sale of all or a portion of our assets, your information may be transferred.
 
@@ -124,7 +124,7 @@ export default function PrivacyPage() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">privacy seriously.</span>
           </h1>
           <p className="text-lg text-gray-500 leading-relaxed font-medium max-w-2xl mx-auto">
-            We built Gradvise on a foundation of trust. Your data and your guests' data belong to you — period. This policy explains exactly how we handle it.
+            We built Plateio on a foundation of trust. Your data and your guests' data belong to you — period. This policy explains exactly how we handle it.
           </p>
         </motion.div>
 

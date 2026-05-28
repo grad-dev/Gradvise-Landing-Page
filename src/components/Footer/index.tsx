@@ -11,7 +11,7 @@ export default function MainFooter() {
             <div className="lg:col-span-2">
               <Link href="/" className="flex items-center gap-2 group mb-6">
                  <div className="w-10 h-10 bg-black text-white rounded-xl flex items-center justify-center font-bold text-xl group-hover:bg-primary transition-colors shadow-lg">G</div>
-                 <span className="text-2xl font-black tracking-tighter text-black">Gradvise.</span>
+                 <span className="text-2xl font-black tracking-tighter text-black">Plateio.</span>
               </Link>
               <p className="text-gray-500 max-w-sm font-medium leading-relaxed mb-8">
                 The ultimate revenue operating system for modern restaurants. Stop juggling tablets and start filling tables.
@@ -51,7 +51,7 @@ export default function MainFooter() {
 
           <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-gray-100">
              <p className="text-gray-400 font-medium text-sm mb-4 md:mb-0">
-               © {year} Gradvise Inc. All rights reserved.
+               © {year} Plateio Inc. All rights reserved.
              </p>
           </div>
         </div>

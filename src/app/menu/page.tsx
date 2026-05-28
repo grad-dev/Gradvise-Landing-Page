@@ -65,7 +65,7 @@ export default function MenuPage() {
              <div className="order-1 lg:order-2">
                 <h2 className="text-3xl md:text-4xl font-black text-black mb-6">Menu Engineering AI</h2>
                 <p className="text-lg text-gray-500 font-medium leading-relaxed mb-6">
-                  Stop relying on servers to remember the perfect wine pairing. Gradvise analyzes historical order data to automatically recommend the highest-converting add-ons right on the guest's phone.
+                  Stop relying on servers to remember the perfect wine pairing. Plateio analyzes historical order data to automatically recommend the highest-converting add-ons right on the guest's phone.
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-center text-gray-700 font-bold"><CheckCircle2 className="w-5 h-5 text-primary mr-3" /> Auto-suggests pairings based on cart contents</li>

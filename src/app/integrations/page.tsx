@@ -11,12 +11,12 @@ const fadeUp = {
 };
 
 const integrations = [
-  { name: 'Toast POS', category: 'Point of Sale', description: 'The most popular restaurant POS. Gradvise connects via Toast\'s native API, syncing every order, menu change, and labor clock-in in real-time.', badge: 'Native API', color: 'bg-orange-50 border-orange-100' },
+  { name: 'Toast POS', category: 'Point of Sale', description: 'The most popular restaurant POS. Plateio connects via Toast\'s native API, syncing every order, menu change, and labor clock-in in real-time.', badge: 'Native API', color: 'bg-orange-50 border-orange-100' },
   { name: 'Square for Restaurants', category: 'Point of Sale', description: 'Full order history, menu sync, and payment data pulled directly from Square. Works with both the Counter and KDS hardware.', badge: 'Native API', color: 'bg-blue-50 border-blue-100' },
-  { name: 'Clover', category: 'Point of Sale', description: 'Connect your Clover terminal in minutes. All order items, modifiers, and discounts are captured and flow into your Gradvise dashboard automatically.', badge: 'Native API', color: 'bg-green-50 border-green-100' },
-  { name: 'Lightspeed Restaurant', category: 'Point of Sale', description: 'Used widely in full-service restaurants and hotels. Gradvise\'s Lightspeed connection includes floor plan sync and table-level analytics.', badge: 'Native API', color: 'bg-purple-50 border-purple-100' },
-  { name: 'OpenTable', category: 'Reservations', description: 'Guest reservation data from OpenTable flows directly into Gradvise Guest Profiles, pre-populating party size, preferences, and special occasion notes.', badge: 'Direct Sync', color: 'bg-red-50 border-red-100' },
-  { name: 'Resy', category: 'Reservations', description: 'Two-way sync between Resy and Gradvise means your team can see reservation context in the Kitchen, and guest behavior from the dining room in Resy.', badge: 'Direct Sync', color: 'bg-yellow-50 border-yellow-100' },
+  { name: 'Clover', category: 'Point of Sale', description: 'Connect your Clover terminal in minutes. All order items, modifiers, and discounts are captured and flow into your Plateio dashboard automatically.', badge: 'Native API', color: 'bg-green-50 border-green-100' },
+  { name: 'Lightspeed Restaurant', category: 'Point of Sale', description: 'Used widely in full-service restaurants and hotels. Plateio\'s Lightspeed connection includes floor plan sync and table-level analytics.', badge: 'Native API', color: 'bg-purple-50 border-purple-100' },
+  { name: 'OpenTable', category: 'Reservations', description: 'Guest reservation data from OpenTable flows directly into Plateio Guest Profiles, pre-populating party size, preferences, and special occasion notes.', badge: 'Direct Sync', color: 'bg-red-50 border-red-100' },
+  { name: 'Resy', category: 'Reservations', description: 'Two-way sync between Resy and Plateio means your team can see reservation context in the Kitchen, and guest behavior from the dining room in Resy.', badge: 'Direct Sync', color: 'bg-yellow-50 border-yellow-100' },
   { name: 'DoorDash', category: 'Delivery', description: 'DoorDash orders appear on your Smart KDS alongside dine-in tickets, with channel-specific timing rules to manage delivery windows accurately.', badge: 'Auto-Import', color: 'bg-gray-50 border-gray-200' },
   { name: 'Uber Eats', category: 'Delivery', description: 'Full order visibility for every Uber Eats ticket. Delivery ETA data is surfaced to your kitchen team to help prioritize order timing.', badge: 'Auto-Import', color: 'bg-gray-50 border-gray-200' },
   { name: 'QuickBooks Online', category: 'Accounting', description: 'Daily revenue, COGS, and labor summaries sync automatically to QuickBooks — eliminating manual journal entries and month-end reconciliation pain.', badge: 'Auto-Sync', color: 'bg-gray-50 border-gray-200' },
@@ -47,7 +47,7 @@ export default function IntegrationsPage() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">rip and replace.</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-500 leading-relaxed font-medium max-w-2xl mx-auto">
-            Gradvise is designed to sit on top of your existing tech stack. Connect your POS, reservations platform, and delivery apps in minutes — no IT department needed.
+            Plateio is designed to sit on top of your existing tech stack. Connect your POS, reservations platform, and delivery apps in minutes — no IT department needed.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
             <Link href="/contact" className="inline-flex items-center justify-center bg-black text-white font-bold rounded-full py-3.5 px-8 hover:bg-primary transition-all duration-300 group">
@@ -113,7 +113,7 @@ export default function IntegrationsPage() {
               <Zap className="w-5 h-5 text-primary" />
             </div>
             <h2 className="text-2xl font-black text-black tracking-tight mb-3">Open API for custom builds</h2>
-            <p className="text-gray-500 font-medium leading-relaxed mb-6">Don't see your system on the list? Gradvise offers a fully-documented REST API with webhooks, so your dev team can connect any platform in hours, not months.</p>
+            <p className="text-gray-500 font-medium leading-relaxed mb-6">Don't see your system on the list? Plateio offers a fully-documented REST API with webhooks, so your dev team can connect any platform in hours, not months.</p>
             <a href="#" className="inline-flex items-center text-sm font-bold text-black hover:text-primary transition-colors group">
               Read the API Docs <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </a>

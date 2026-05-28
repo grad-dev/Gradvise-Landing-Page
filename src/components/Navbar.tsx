@@ -54,7 +54,7 @@ export default function MainNavbar() {
                 </div>
               </div>
               <span className={`text-xl font-black tracking-tighter transition-colors duration-200 ${scrolled ? 'text-black group-hover:text-primary' : 'text-black group-hover:text-primary'}`}>
-                Gradvise
+                Plateio
               </span>
             </Link>
 

@@ -49,7 +49,7 @@ export default function MarketingEnginePage() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">while you sleep.</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-500 leading-relaxed font-medium max-w-2xl mx-auto">
-            Gradvise's Marketing Engine automatically sends the right message to the right guest at the right time — turning one-time visitors into lifelong regulars without any manual effort.
+            Plateio's Marketing Engine automatically sends the right message to the right guest at the right time — turning one-time visitors into lifelong regulars without any manual effort.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
             <Link href="/contact" className="inline-flex items-center justify-center bg-black text-white font-bold rounded-full py-3.5 px-8 hover:bg-primary transition-all duration-300 group">

@@ -27,7 +27,7 @@ export default function ServicesPage() {
                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">Nothing you don't.</span>
              </h1>
              <p className="text-lg md:text-xl text-gray-500 leading-relaxed font-medium mb-10 max-w-3xl mx-auto">
-               Stop taping together five different software subscriptions. Gradvise provides a seamless suite of services that talk to each other natively, reducing costs and eliminating data silos.
+               Stop taping together five different software subscriptions. Plateio provides a seamless suite of services that talk to each other natively, reducing costs and eliminating data silos.
              </p>
           </motion.div>
         </div>
@@ -101,7 +101,7 @@ export default function ServicesPage() {
             </div>
             <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white mb-4">Deep POS Integrations</h2>
             <p className="text-gray-400 font-medium leading-relaxed text-lg">
-              Already use Toast, Square, or Stripe? Gradvise plugs right into your existing Point of Sale system via native APIs so you don't have to rip and replace your hardware.
+              Already use Toast, Square, or Stripe? Plateio plugs right into your existing Point of Sale system via native APIs so you don't have to rip and replace your hardware.
             </p>
           </div>
           <Link href="/demo" className="relative z-10 whitespace-nowrap inline-flex items-center justify-center bg-white text-black font-bold text-lg px-8 py-4 rounded-full hover:bg-gray-100 transition-colors">

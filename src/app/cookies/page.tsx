@@ -43,12 +43,12 @@ const sections = [
     title: '1. What Are Cookies?',
     content: `Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work, or work more efficiently, as well as to provide information to the website operators.
 
-Cookies set by the website operator (in this case, Gradvise) are called "first-party cookies." Cookies set by third parties (such as analytics services) are called "third-party cookies." Both types may be session cookies (deleted when you close your browser) or persistent cookies (stored for a set period of time).`,
+Cookies set by the website operator (in this case, Plateio) are called "first-party cookies." Cookies set by third parties (such as analytics services) are called "third-party cookies." Both types may be session cookies (deleted when you close your browser) or persistent cookies (stored for a set period of time).`,
   },
   {
     id: 'how-we-use',
     title: '2. How We Use Cookies',
-    content: `Gradvise uses cookies for the following purposes:
+    content: `Plateio uses cookies for the following purposes:
 
 • Authentication: To keep you signed in to your account and verify your identity securely.
 • Security: To detect and prevent fraudulent activity and protect your account.
@@ -82,7 +82,7 @@ Browser Settings: Most browsers allow you to refuse cookies, delete existing coo
 
 Cookie Preference Center: You can also update your cookie preferences at any time by clicking "Cookie Settings" in the footer of our website.
 
-Please note that disabling certain cookies may affect the functionality of the Gradvise platform.`,
+Please note that disabling certain cookies may affect the functionality of the Plateio platform.`,
   },
   {
     id: 'updates',

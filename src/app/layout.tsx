@@ -20,11 +20,11 @@ const playfair = Playfair_Display({
 
 export const metadata = {
   title: {
-    default: 'Gradvise | Restaurant Management Software & Revenue Platform',
-    template: '%s | Gradvise',
+    default: 'Plateio | Restaurant Management Software & Revenue Platform',
+    template: '%s | Plateio',
   },
   description:
-    'Gradvise is the all-in-one restaurant management platform. Smart menus, automated email & SMS marketing, guest CRM, real-time analytics, and Kitchen Display System — built for modern restaurants.',
+    'Plateio is the all-in-one restaurant management platform. Smart menus, automated email & SMS marketing, guest CRM, real-time analytics, and Kitchen Display System — built for modern restaurants.',
   keywords: [
     'restaurant management software',
     'restaurant POS system',
@@ -36,18 +36,18 @@ export const metadata = {
     'restaurant guest profiles',
     'restaurant loyalty program',
   ],
-  authors: [{ name: 'Gradvise' }],
-  creator: 'Gradvise Inc.',
-  metadataBase: new URL('https://gradvise.com'),
+  authors: [{ name: 'Plateio' }],
+  creator: 'Plateio Inc.',
+  metadataBase: new URL('https://plateio.in'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://gradvise.com',
-    siteName: 'Gradvise',
-    title: 'Gradvise | Restaurant Management Software & Revenue Platform',
+    url: 'https://plateio.in',
+    siteName: 'Plateio',
+    title: 'Plateio | Restaurant Management Software & Revenue Platform',
     description:
       'The all-in-one restaurant management platform. Smart menus, automated marketing, guest CRM, and real-time analytics — start your free 30-day trial today.',
     images: [
@@ -55,16 +55,16 @@ export const metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Gradvise — Restaurant Management Platform',
+        alt: 'Plateio — Restaurant Management Platform',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gradvise | Restaurant Management Software',
+    title: 'Plateio | Restaurant Management Software',
     description:
       'Smart menus, automated marketing, guest CRM, and real-time analytics for modern restaurants.',
-    creator: '@gradvise',
+    creator: '@plateio',
     images: ['/og-image.png'],
   },
   robots: {

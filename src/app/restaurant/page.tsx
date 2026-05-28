@@ -27,7 +27,7 @@ export default function RestaurantPage() {
                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">real restaurants.</span>
              </h1>
              <p className="text-lg md:text-xl text-gray-500 leading-relaxed font-medium mb-10 max-w-3xl mx-auto">
-               Software is an investment, not an expense. Discover how top-tier hospitality groups are leveraging Gradvise to increase margins, retain staff, and drive massive guest loyalty.
+               Software is an investment, not an expense. Discover how top-tier hospitality groups are leveraging Plateio to increase margins, retain staff, and drive massive guest loyalty.
              </p>
           </motion.div>
         </div>
@@ -57,7 +57,7 @@ export default function RestaurantPage() {
             <div className="bg-gray-50 rounded-[32px] border border-gray-100 p-8 md:p-10">
                <Quote className="w-10 h-10 text-primary mb-6 opacity-50" />
                <p className="text-xl text-black font-medium leading-relaxed mb-8">
-                 "Before Gradvise, we were paying for Resy, Mailchimp, 7Shifts, and Toast separately. Now everything talks to each other. Our FOH staff spends less time staring at iPads and more time looking at guests. Revenue is up 18%."
+                 "Before Plateio, we were paying for Resy, Mailchimp, 7Shifts, and Toast separately. Now everything talks to each other. Our FOH staff spends less time staring at iPads and more time looking at guests. Revenue is up 18%."
                </p>
                <div className="flex items-center gap-4">
                  <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
@@ -72,7 +72,7 @@ export default function RestaurantPage() {
             <div className="bg-gray-50 rounded-[32px] border border-gray-100 p-8 md:p-10">
                <Quote className="w-10 h-10 text-primary mb-6 opacity-50" />
                <p className="text-xl text-black font-medium leading-relaxed mb-8">
-                 "The automated marketing engine paid for the entire Gradvise subscription in the first week. We sent a targeted 'We Miss You' text to guests who hadn't visited in 60 days and drove 40 covers on a Tuesday night."
+                 "The automated marketing engine paid for the entire Plateio subscription in the first week. We sent a targeted 'We Miss You' text to guests who hadn't visited in 60 days and drove 40 covers on a Tuesday night."
                </p>
                <div className="flex items-center gap-4">
                  <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
@@ -117,7 +117,7 @@ export default function RestaurantPage() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-primary/20 blur-[100px] pointer-events-none" />
           <h2 className="text-3xl md:text-5xl font-black text-white mb-6 relative z-10">Ready to join the elite?</h2>
           <p className="text-lg text-gray-400 mb-10 max-w-xl mx-auto relative z-10 font-medium">
-            Get a tailored demo of Gradvise based on your restaurant's specific service model and size.
+            Get a tailored demo of Plateio based on your restaurant's specific service model and size.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
              <Link href="/demo" className="w-full sm:w-auto bg-primary text-white font-bold px-8 py-4 rounded-full shadow-lg hover:bg-primary/90 hover:-translate-y-1 transition-all">

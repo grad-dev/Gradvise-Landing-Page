@@ -66,7 +66,7 @@ export default function CareersPage() {
         >
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-primary/30 via-transparent to-transparent" />
           <div className="relative z-10">
-            <p className="text-white/50 text-xs font-bold uppercase tracking-widest mb-8 text-center">The Gradvise Team</p>
+            <p className="text-white/50 text-xs font-bold uppercase tracking-widest mb-8 text-center">The Plateio Team</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
               {team.map((member) => (
                 <div key={member.role} className="bg-white/5 border border-white/10 rounded-3xl p-7 backdrop-blur-sm">
@@ -86,7 +86,7 @@ export default function CareersPage() {
         <div className="mb-20">
           <motion.div {...fadeUp} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-black tracking-tight mb-3">Why join at this stage?</h2>
-            <p className="text-gray-500 font-medium max-w-xl mx-auto">Early-stage means early opportunity. Here's what that looks like at Gradvise.</p>
+            <p className="text-gray-500 font-medium max-w-xl mx-auto">Early-stage means early opportunity. Here's what that looks like at Plateio.</p>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {perks.map((perk, i) => (
@@ -186,7 +186,7 @@ export default function CareersPage() {
                   name="message"
                   required
                   rows={5}
-                  placeholder="What have you built? What do you care about? Why Gradvise? Drop a link to your portfolio or LinkedIn if you have one."
+                  placeholder="What have you built? What do you care about? Why Plateio? Drop a link to your portfolio or LinkedIn if you have one."
                   value={form.message}
                   onChange={handleChange}
                   className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-black font-medium focus:outline-none focus:border-primary transition-colors resize-none"

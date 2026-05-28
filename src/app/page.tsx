@@ -806,7 +806,7 @@ export default function Home() {
 
                  {[
                    {
-                     quote: "Gradvise transformed our operations overnight. The automated KDS routing cut our wait times by 15 minutes, and the built-in marketing engine increased our returning guests by 34%. It's the most elegant software we've ever used.",
+                     quote: "Plateio transformed our operations overnight. The automated KDS routing cut our wait times by 15 minutes, and the built-in marketing engine increased our returning guests by 34%. It's the most elegant software we've ever used.",
                      author: "Arthur Sterling",
                      role: "Operations Director, Sterling Hospitality",
                      image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=2000",
@@ -905,7 +905,7 @@ export default function Home() {
           <motion.div {...fadeUp} className="text-center mb-16">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-red-50 border border-red-100 text-primary mb-6 shadow-sm">
               <ShieldCheck className="w-4 h-4" />
-              <span className="text-xs font-bold tracking-[0.2em] uppercase">Why Gradvise</span>
+              <span className="text-xs font-bold tracking-[0.2em] uppercase">Why Plateio</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-black tracking-tighter leading-[1.1] mb-4">
               Your current system is{' '}
@@ -926,7 +926,7 @@ export default function Home() {
                   <X className="w-4 h-4 text-gray-400" />
                 </div>
                 <div>
-                  <p className="font-black text-gray-700 text-base">Without Gradvise</p>
+                  <p className="font-black text-gray-700 text-base">Without Plateio</p>
                   <p className="text-xs text-gray-400 font-medium">The daily reality for most restaurants</p>
                 </div>
               </div>
@@ -952,7 +952,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* WITH GRADVISE column — white with red accent */}
+            {/* WITH PLATEIO column — white with red accent */}
             <div className="bg-white border-2 border-primary rounded-[32px] p-8 md:p-10 relative overflow-hidden shadow-lg shadow-primary/10">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-orange-400 rounded-t-[30px]" />
               <div className="flex items-center gap-3 mb-8 pb-6 border-b border-red-100">
@@ -960,14 +960,14 @@ export default function Home() {
                   <Check className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="font-black text-black text-base">With Gradvise</p>
+                  <p className="font-black text-black text-base">With Plateio</p>
                   <p className="text-xs text-primary/60 font-semibold">What your operation looks like from day one</p>
                 </div>
               </div>
               <div className="space-y-5">
                 {[
                   { win: 'Menu live in seconds, not days', detail: 'Change a price, add a special, 86 an item — updates go live instantly across all tables the moment you hit save. Zero print cost.' },
-                  { win: 'Every guest has a profile from visit one', detail: 'Gradvise automatically builds a CRM record — visits, spend, preferences, birthdays — with no manual entry ever needed.' },
+                  { win: 'Every guest has a profile from visit one', detail: 'Plateio automatically builds a CRM record — visits, spend, preferences, birthdays — with no manual entry ever needed.' },
                   { win: 'Marketing runs itself, every day', detail: 'Win-back emails fire when a regular goes quiet. Birthday rewards send automatically. Promos reach the right guests at the right time.' },
                   { win: 'Kitchen runs on live digital screens', detail: 'Orders route to the right station instantly. Color-coded timers replace paper chaos. Every prep time tracked and optimised.' },
                   { win: 'Revenue gaps visible in real time', detail: 'Live dashboards show food cost variance, RevPASH, and upsell rate while you can still act on it — not a month later.' },
@@ -992,7 +992,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-gray-50/0 to-gray-50/50 rounded-3xl -z-10 pointer-events-none" />
             {[
               { stat: '+23%', label: 'Average revenue increase in first 90 days', icon: TrendingUp },
-              { stat: '60 min', label: 'Average time to go fully live with Gradvise', icon: Zap },
+              { stat: '60 min', label: 'Average time to go fully live with Plateio', icon: Zap },
               { stat: '5-in-1', label: 'Tools replaced — menu, CRM, KDS, marketing, analytics', icon: ShieldCheck },
             ].map(({ stat, label, icon: Icon }) => (
               <div key={stat} className="group bg-white border border-gray-100 rounded-[24px] p-7 flex items-center gap-5 hover:border-red-200 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
@@ -1033,22 +1033,22 @@ export default function Home() {
               },
               {
                 q: 'Is there really a 30-day free trial?',
-                a: 'Yes — 30 full days, no credit card required. You get access to every feature on your chosen plan, with full onboarding support. If you decide Gradvise isn\'t for you, just cancel. No questions asked.'
+                a: 'Yes — 30 full days, no credit card required. You get access to every feature on your chosen plan, with full onboarding support. If you decide Plateio isn\'t for you, just cancel. No questions asked.'
               },
               {
                 q: 'Which POS systems do you integrate with?',
-                a: 'Gradvise natively integrates with Toast, Square, Clover, Lightspeed, and Stripe Terminal. If you use a different POS, our team will work with you to build a custom connection — most are completed within 5 business days.'
+                a: 'Plateio natively integrates with Toast, Square, Clover, Lightspeed, and Stripe Terminal. If you use a different POS, our team will work with you to build a custom connection — most are completed within 5 business days.'
               },
               {
                 q: 'Do my guests need to download an app?',
-                a: 'No app download needed — ever. Guests interact with Gradvise through a QR code on their table that opens directly in their browser. Zero friction, zero barrier to engagement.'
+                a: 'No app download needed — ever. Guests interact with Plateio through a QR code on their table that opens directly in their browser. Zero friction, zero barrier to engagement.'
               },
               {
                 q: 'Is my guest data secure?',
                 a: 'All data is encrypted at rest (AES-256) and in transit (TLS 1.3). We are SOC 2 Type II compliant and conduct annual independent security audits. Your guest data is never sold or shared with third parties.'
               },
               {
-                q: 'Can I use Gradvise for multiple locations?',
+                q: 'Can I use Plateio for multiple locations?',
                 a: 'Yes. Multi-location management is available on our Growth and Enterprise plans. Each location gets its own dashboard, and you get a unified view across all venues with consolidated reporting.'
               },
               {

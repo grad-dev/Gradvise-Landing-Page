@@ -53,7 +53,7 @@ export default function GuestProfilesPage() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">your best regular.</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-500 leading-relaxed font-medium max-w-2xl mx-auto">
-            Gradvise automatically builds a rich, living profile for every guest — capturing their orders, preferences, allergies, and special dates — so you can deliver a personal experience at scale.
+            Plateio automatically builds a rich, living profile for every guest — capturing their orders, preferences, allergies, and special dates — so you can deliver a personal experience at scale.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
             <Link href="/contact" className="inline-flex items-center justify-center bg-black text-white font-bold rounded-full py-3.5 px-8 hover:bg-primary transition-all duration-300 group">

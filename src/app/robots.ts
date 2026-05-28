@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://gradvise.com/sitemap.xml',
+    sitemap: 'https://plateio.in/sitemap.xml',
   };
 }
